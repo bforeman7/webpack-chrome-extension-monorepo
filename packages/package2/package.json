@@ -1,0 +1,12 @@
+{
+  "name": "@name/package2",
+  "version": "1.0.0",
+  "description": "The package containing some utility functions",
+  "type": "module",
+  "main": "build/index.js",
+  "types": "src/index.ts",
+  "scripts": {
+    "build": "tsc --build"
+  },
+  "dependencies": {}
+}

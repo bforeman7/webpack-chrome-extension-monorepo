@@ -1,0 +1,47 @@
+{
+  "name": "Extension 1",
+  "description": "Does some stuff",
+  "version": "1.0.0",
+  "manifest_version": 3,
+  "background": {
+    "service_worker": "/js/index.js",
+    "type": "module"
+  },
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "/static/**",
+        "/lib/**"
+      ],
+      "matches": [
+        "<all_urls>"
+      ]
+    }
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "https://www.google.com/*"
+      ],
+      "js": [
+        "/lib/jquery.min.js",
+        "/js/onLoad.js"
+      ],
+      "run_at": "document_idle"
+    }
+  ],
+  "permissions": [
+    "storage",
+    "activeTab",
+    "scripting",
+    "tabs",
+    "webNavigation"
+  ],
+  "icons": {
+    "16": "static/icons/icon16.png",
+    "19": "static/icons/icon19.png",
+    "38": "static/icons/icon38.png",
+    "48": "static/icons/icon48.png",
+    "128": "static/icons/icon128.png"
+  }
+}
